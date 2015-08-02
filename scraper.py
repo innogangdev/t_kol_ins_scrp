@@ -3,7 +3,7 @@ import lxml.html
 html = scraperwiki.scrape("http://www.kollyinsider.com/search/label/?max-results=10")
 root = lxml.html.fromstring(html)
 node=root.cssselect("div.post")
-#scraperwiki.sqlite.execute("delete from swdata");
+scraperwiki.sqlite.execute("delete from data");
 c=0
 for i in node:
     c=c+1
